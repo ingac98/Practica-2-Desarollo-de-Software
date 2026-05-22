@@ -117,6 +117,8 @@ No es microservicios; es un monolito liviano dividido por frontend y backend.
 ```
 urbanetperu/
 ├── backend/
+    ├── builders/
+│   │   └── ReporteBuilders.js
 │   ├── config/
 │   │   └── db.js
 │   ├── middleware/
@@ -135,8 +137,11 @@ urbanetperu/
 │       ├── styles/
 │       └── utils/
 └── docs/
+    ├── evidencia
+    └── Patrones creacionales Prubeas en Postman
     ├── UrbanetPeru_SRS.md
     └── arquitectura-proyecto.md
+    └── casos-de-prueba.md
 ```
 
 ## 10. Conclusion
