@@ -106,3 +106,22 @@ Se comprobo lo siguiente durante la revision:
 
 - `docs/UrbanetPeru_SRS.md`: documento de requerimientos del sistema.
 - `docs/arquitectura-proyecto.md`: arquitectura del sistema, decisiones tecnicas y flujo de datos.
+
+
+## Patrones de diseño implementados PRACTICA CALIFICADA #2
+
+En el backend del proyecto se implementaron dos patrones creacionales con el objetivo de mejorar la organización del código, separar responsabilidades y facilitar el mantenimiento futuro de la aplicación.
+
+Los patrones aplicados fueron:
+
+- Singleton Pattern
+- Builder Pattern
+
+---
+
+### Singleton Pattern
+
+El patrón Singleton se aplicó en el archivo:
+
+```txt
+backend/config/db.js

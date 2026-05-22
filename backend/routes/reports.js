@@ -1,6 +1,7 @@
 import express from 'express';
 import Report from '../models/Report.js';
 import { verifyToken } from '../middleware/auth.js';
+import ReportBuilder from '../builders/ReportBuilder.js';
 
 const router = express.Router();
 
@@ -13,19 +14,16 @@ router.post('/', verifyToken, async (req, res) => {
   }
 
   try {
-    const report = await Report.create({
-      userId: req.user.userId,
-      userName: req.body.userName,
-      userEmail: req.body.userEmail,
-      title,
-      description,
-      location,
-      latitude,
-      longitude,
-      category: category || 'bache',
-      priority: priority || 'media',
-      images: images || []
-    });
+    const reportData = new ReportBuilder()
+    .setUser(req.user.userId, req.body.userName, req.body.userEmail)
+    .setBasicInfo(title, description, location)
+    .setCoordinates(latitude, longitude)
+    .setCategory(category)
+    .setPriority(priority)
+    .setImages(images)
+    .build();
+
+    const report = await Report.create(reportData);
 
     res.status(201).json({ message: 'Reporte creado exitosamente', report });
   } catch (error) {
