@@ -109,7 +109,7 @@ Se realizaron pruebas de los principales endpoints del backend utilizando Postma
 Las capturas de las pruebas se guardaron en la carpeta:
 
 ```txt
-docs/postman/
+docs/Patrones creacionales Prubeas en Postman/
 ```
 
 ---
